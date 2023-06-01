@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    position: relative;
+    width: 100%;
+    top: -30px;
+    background-image: url('/IM/images.jpg');
+    background-size: cover;
+    background-position: relative;
+
+}
+
+h1 {
+    position: relative;
+    text-align: center;
+    top: 30px;
+    margin: 2rem;
+    color: #fff;
+    text-shadow: 2px 2px 2px blue(0, 0, 0, 0.46);
+}
+
+#reglas{
+    
+    position: relative;
+    top: 60px;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+
+
+main {
+    position: relative;
+    left: 300px;
+    top: -100px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 400px;
+    margin: auto;
+}
+
+figure,figure img {
+    display: inline-block;
+    width: 100%;
+}
+
+figure {
+    position: relative;
+    transition: all ease .5s;
+    transform-style: preserve-3d;
+    transform: perspective(600px) rotateY(0deg);
+    cursor: pointer;
+    box-shadow: 3px 3px 16px rgb(0, 0, 0, 0.6);
+}
+
+figure::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 70px;
+    background: rgba(255, 255, 255, 0);
+    transition: 0.3s all ease;
+}
+
+figure:hover:after {
+    background: rgba(255, 255, 255, 0.137);
+}
+
+figure.opened {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+figure .back {
+    display: block;
+    backface-visibility: hidden;
+}
+
+figure .searched-image {
+    position: absolute;
+    top: 0;
+    transform: perspective(600px) rotateY(180deg);
+    backface-visibility: hidden;
+    height: 100%;
+    overflow: hidden;
+}
